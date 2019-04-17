@@ -12,6 +12,7 @@ Pour installer le logiciel :
 
 
   wget https://github.com/Irstea/esfc/raw/master/install/deploy_new_instance.sh
+  
   ./deploy_new_instance.sh
  
 _Attention_ : la procédure d'installation n'a pas été testée en situation réelle, vérifiez le comportement du script et signalez toute anomalie.

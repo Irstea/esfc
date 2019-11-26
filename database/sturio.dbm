@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.2-beta" last-position="1024,0" last-zoom="1" max-obj-count="170"
+<dbmodel pgmodeler-ver="0.9.2-beta1" last-position="0,0" last-zoom="1" max-obj-count="170"
 	 default-owner="postgres">
 <role name="quinton"
       superuser="true"
@@ -20,6 +20,34 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<tablespace name="pg_default"/>
 </database>
 
+<tag name="poisson">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#00aa00,#00aa00,#20486f"/>
+</tag>
+<tag name="bassin">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#00aaff,#00aaff,#20486f"/>
+</tag>
+<tag name="alimentation">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#aa0000,#aa0000,#20486f"/>
+</tag>
+<tag name="repro">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#808080"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#ffaa00,#ffaa00,#20486f"/>
+</tag>
 <schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
 </schema>
 
@@ -357,6 +385,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 <table name="aliment" layer="0" collapse-mode="2" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
+	<tag name="alimentation"/>
 	<position x="500" y="440"/>
 	<column name="aliment_id" not-null="true" sequence="public.aliment_aliment_id_seq">
 		<type name="integer" length="0"/>
@@ -385,6 +414,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Caractérisation de l'aliment par rapport à la catégorie de poisson nourri (adulte, juvénile, repro)]]></comment>
+	<tag name="alimentation"/>
 	<position x="240" y="440"/>
 	<column name="aliment_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -406,6 +436,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des répartitions quotidiennes d'aliments]]></comment>
+	<tag name="alimentation"/>
 	<position x="1160" y="660"/>
 	<column name="aliment_quotidien_id" not-null="true" sequence="public.aliment_quotidien_aliment_quotidien_id_seq">
 		<type name="integer" length="0"/>
@@ -434,6 +465,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Type d'aliment (naturel, artificiel, etc.)]]></comment>
+	<tag name="alimentation"/>
 	<position x="240" y="660"/>
 	<column name="aliment_type_id" not-null="true" sequence="public.aliment_type_aliment_type_id_seq">
 		<type name="integer" length="0"/>
@@ -455,6 +487,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Liste des analyses d'eau réalisées dans les circuits d'eau]]></comment>
+	<tag name="bassin"/>
 	<position x="2280" y="180"/>
 	<column name="analyse_eau_id" not-null="true" sequence="public.analyse_eau_analyse_eau_id_seq">
 		<type name="integer" length="0"/>
@@ -568,6 +601,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des analyses des métaux]]></comment>
+	<tag name="bassin"/>
 	<position x="2540" y="180"/>
 	<column name="analyse_metal_id" not-null="true" sequence="public.analyse_metal_analyse_metal_id_seq">
 		<type name="integer" length="0"/>
@@ -600,6 +634,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Tables des anesthésies pratiquées]]></comment>
+	<tag name="poisson"/>
 	<position x="1480" y="1440"/>
 	<column name="anesthesie_id" not-null="true" sequence="public.anesthesie_anesthesie_id_seq">
 		<type name="integer" length="0"/>
@@ -638,6 +673,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Tables des produits utilisés pour l'anesthésie]]></comment>
+	<tag name="poisson"/>
 	<position x="1720" y="1440"/>
 	<column name="anesthesie_produit_id" not-null="true" sequence="public.anesthesie_produit_anesthesie_produit_id_seq">
 		<type name="integer" length="0"/>
@@ -663,6 +699,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des anomalies détectées dans la base de données]]></comment>
+	<tag name="poisson"/>
 	<position x="1980" y="1220"/>
 	<column name="anomalie_db_id" not-null="true" sequence="public.anomalie_db_anomalie_db_id_seq">
 		<type name="integer" length="0"/>
@@ -706,6 +743,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Types des anomalies détectées dans la base de données]]></comment>
+	<tag name="poisson"/>
 	<position x="2320" y="1220"/>
 	<column name="anomalie_db_type_id" not-null="true" sequence="public.anomalie_db_type_anomalie_db_type_id_seq">
 		<type name="integer" length="0"/>
@@ -727,6 +765,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Description des bassins]]></comment>
+	<tag name="bassin"/>
 	<position x="1440" y="440"/>
 	<column name="bassin_id" not-null="true" sequence="public.bassin_bassin_id_seq">
 		<type name="integer" length="0"/>
@@ -791,6 +830,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 <table name="bassin_campagne" layer="0" collapse-mode="2" max-obj-count="4">
 	<schema name="public"/>
 	<role name="quinton"/>
+	<tag name="bassin"/>
 	<position x="2300" y="840"/>
 	<column name="bassin_campagne_id" not-null="true" sequence="public.bassin_campagne_bassin_campagne_id_seq">
 		<type name="integer" length="0"/>
@@ -814,6 +854,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de liaison des bassins avec les documents]]></comment>
+	<tag name="bassin"/>
 	<position x="1700" y="840"/>
 	<column name="bassin_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -835,6 +876,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements survenant dans les bassins]]></comment>
+	<tag name="bassin"/>
 	<position x="2280" y="20"/>
 	<column name="bassin_evenement_id" not-null="true" sequence="public.bassin_evenement_bassin_evenement_id_seq">
 		<type name="integer" length="0"/>
@@ -867,6 +909,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types d'événements dans les bassins]]></comment>
+	<tag name="bassin"/>
 	<position x="2540" y="20"/>
 	<column name="bassin_evenement_type_id" not-null="true" sequence="public.bassin_evenement_type_bassin_evenement_type_id_seq">
 		<type name="integer" length="0"/>
@@ -888,6 +931,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Suivi des lots dans les bassins]]></comment>
+	<tag name="bassin"/>
 	<position x="1980" y="840"/>
 	<column name="bassin_lot_id" not-null="true" sequence="public.bassin_lot_bassin_lot_id_seq">
 		<type name="integer" length="0"/>
@@ -920,6 +964,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Type de bassin]]></comment>
+	<tag name="bassin"/>
 	<position x="1700" y="20"/>
 	<column name="bassin_type_id" not-null="true" sequence="public.bassin_type_bassin_type_id_seq">
 		<type name="integer" length="0"/>
@@ -941,6 +986,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Élevage des adultes, des juvéniles, infirmerie, etc.]]></comment>
+	<tag name="bassin"/>
 	<position x="860" y="180"/>
 	<column name="bassin_usage_id" not-null="true" sequence="public.bassin_usage_bassin_usage_id_seq">
 		<type name="integer" length="0"/>
@@ -965,6 +1011,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Zones d'implantation des bassins]]></comment>
+	<tag name="bassin"/>
 	<position x="1960" y="20"/>
 	<column name="bassin_zone_id" not-null="true" sequence="public.bassin_zone_bassin_zone_id_seq">
 		<type name="integer" length="0"/>
@@ -986,6 +1033,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Biopsies pratiquées et relevés biométriques correspondants]]></comment>
+	<tag name="repro"/>
 	<position x="1720" y="2220"/>
 	<column name="biopsie_id" not-null="true" sequence="public.biopsie_biopsie_id_seq">
 		<type name="integer" length="0"/>
@@ -1063,6 +1111,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des documents associés avec la biopsie]]></comment>
+	<tag name="repro"/>
 	<position x="1980" y="2220"/>
 	<column name="document_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -1086,6 +1135,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<comment><![CDATA[Table des techniques utilisées pour le calcul du diamètre moyen des ovocytes
 1 : ImageJ
 2 : logiciel Boris]]></comment>
+	<tag name="repro"/>
 	<position x="1980" y="2480"/>
 	<column name="biopsie_technique_calcul_id" not-null="true" sequence="public.biopsie_technique_calcul_biopsie_technique_calcul_id_seq">
 		<type name="integer" length="0"/>
@@ -1107,6 +1157,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Catégorie ou destination de l'aliment (juvénile, adulte, reproduction...)]]></comment>
+	<tag name="poisson"/>
 	<position x="880" y="440"/>
 	<column name="categorie_id" not-null="true" sequence="public.categorie_categorie_id_seq">
 		<type name="integer" length="0"/>
@@ -1129,6 +1180,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Circuit d'eau utilisé par le ou les bassins]]></comment>
+	<tag name="bassin"/>
 	<position x="1960" y="440"/>
 	<column name="circuit_eau_id" not-null="true" sequence="public.circuit_eau_circuit_eau_id_seq">
 		<type name="integer" length="0"/>
@@ -1158,6 +1210,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements sur les circuits d'eau]]></comment>
+	<tag name="bassin"/>
 	<position x="1960" y="660"/>
 	<column name="circuit_evenement_id" not-null="true" sequence="public.circuit_evenement_circuit_evenement_id_seq">
 		<type name="integer" length="0"/>
@@ -1188,6 +1241,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types d'événement pour les circuits d'eau]]></comment>
+	<tag name="bassin"/>
 	<position x="2280" y="660"/>
 	<column name="circuit_evenement_type_id" not-null="true" sequence="public.circuit_evenement_type_circuit_evenement_type_id_seq">
 		<type name="integer" length="0"/>
@@ -1209,6 +1263,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des déterminations de cohortes]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="840"/>
 	<column name="cohorte_id" not-null="true" sequence="public.cohorte_cohorte_id_seq">
 		<type name="integer" length="0"/>
@@ -1247,6 +1302,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Type de détermination des cohortes]]></comment>
+	<tag name="poisson"/>
 	<position x="540" y="840"/>
 	<column name="cohorte_type_id" not-null="true" sequence="public.cohorte_type_cohorte_type_id_seq">
 		<type name="integer" length="0"/>
@@ -1268,6 +1324,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des croisements réalisés]]></comment>
+	<tag name="repro"/>
 	<position x="860" y="2640"/>
 	<column name="croisement_id" not-null="true" sequence="public.croisement_croisement_id_seq">
 		<type name="integer" length="0"/>
@@ -1315,6 +1372,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Qualité des croisements (1 : très bon, 2 : bon, 3 : moyen, 4 : mauvais)]]></comment>
+	<tag name="repro"/>
 	<position x="560" y="2920"/>
 	<column name="croisement_qualite_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -1339,6 +1397,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 1 : données de reproduction
 2 : génétique
 3 : non réalisable]]></comment>
+	<tag name="poisson"/>
 	<position x="540" y="1640"/>
 	<column name="determination_parente_id" not-null="true" sequence="public.determination_parente_determination_parente_id_seq">
 		<type name="integer" length="0"/>
@@ -1360,6 +1419,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des devenirs des lots, et des lachers non rattachables]]></comment>
+	<tag name="poisson"/>
 	<position x="240" y="1020"/>
 	<column name="devenir_id" not-null="true" sequence="public.devenir_devenir_id_seq">
 		<type name="integer" length="0"/>
@@ -1399,6 +1459,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<comment><![CDATA[Table des types de devenir :
 1 : lâcher
 2 : stock captif]]></comment>
+	<tag name="poisson"/>
 	<position x="240" y="840"/>
 	<column name="devenir_type_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -1420,6 +1481,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table générale récapitulant les distributions quotidiennes]]></comment>
+	<tag name="alimentation"/>
 	<position x="1160" y="440"/>
 	<column name="distrib_quotidien_id" not-null="true" sequence="public.distrib_quotidien_distrib_quotidien_id_seq">
 		<type name="integer" length="0"/>
@@ -1452,6 +1514,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de distribution des aliments pour une période donnée]]></comment>
+	<tag name="alimentation"/>
 	<position x="1160" y="20"/>
 	<column name="distribution_id" not-null="true" sequence="public.distribution_distribution_id_seq">
 		<type name="integer" length="0"/>
@@ -1575,6 +1638,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des dosages sanguins]]></comment>
+	<tag name="poisson"/>
 	<position x="1480" y="1640"/>
 	<column name="dosage_sanguin_id" not-null="true" sequence="public.dosage_sanguin_dosage_sanguin_id_seq">
 		<type name="integer" length="0"/>
@@ -1624,6 +1688,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Echographies réalisées]]></comment>
+	<tag name="poisson"/>
 	<position x="1480" y="1880"/>
 	<column name="echographie_id" not-null="true" sequence="public.echographie_echographie_id_seq">
 		<type name="integer" length="0"/>
@@ -1670,6 +1735,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de liaison des événements avec des documents]]></comment>
+	<tag name="poisson"/>
 	<position x="1720" y="1640"/>
 	<column name="evenement_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -1686,6 +1752,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements ou des opérations particulières réalisées]]></comment>
+	<tag name="poisson"/>
 	<position x="1160" y="1640"/>
 	<column name="evenement_id" not-null="true" sequence="public.evenement_evenement_id_seq">
 		<type name="integer" length="0"/>
@@ -1717,6 +1784,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types d'événements]]></comment>
+	<tag name="poisson"/>
 	<position x="1980" y="1420"/>
 	<column name="evenement_type_id" not-null="true" sequence="public.evenement_type_evenement_type_id_seq">
 		<type name="integer" length="0"/>
@@ -1742,6 +1810,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Méthodes de détermination du sexe]]></comment>
+	<tag name="poisson"/>
 	<position x="540" y="1940"/>
 	<column name="gender_methode_id" not-null="true" sequence="public.gender_methode_gender_methode_id_seq">
 		<type name="integer" length="0"/>
@@ -1763,6 +1832,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Opérations de détermination du sexe]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="1840"/>
 	<column name="gender_selection_id" not-null="true" sequence="public.gender_selection_gender_selection_id_seq">
 		<type name="integer" length="0"/>
@@ -1800,6 +1870,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des prélèvements réalisés pour des tests génétiques]]></comment>
+	<tag name="poisson"/>
 	<position x="1460" y="1220"/>
 	<column name="genetique_id" not-null="true" sequence="public.genetique_genetique_id_seq">
 		<type name="integer" length="0"/>
@@ -1837,6 +1908,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des hormones injectées lors des reproductions]]></comment>
+	<tag name="repro"/>
 	<position x="900" y="2920"/>
 	<column name="hormone_id" not-null="true" sequence="public.hormone_hormone_id_seq">
 		<type name="integer" length="0"/>
@@ -1863,6 +1935,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table temporaire pour importer les aliments, entre deux dates]]></comment>
+	<tag name="alimentation"/>
 	<position x="240" y="180"/>
 	<column name="import_alim_id" not-null="true" sequence="public.import_alim_import_alim_id_seq">
 		<type name="integer" length="0"/>
@@ -1914,6 +1987,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des injections d'hormones]]></comment>
+	<tag name="repro"/>
 	<position x="1200" y="2640"/>
 	<column name="injection_id" not-null="true" sequence="public.injection_injection_id_seq">
 		<type name="integer" length="0"/>
@@ -1952,6 +2026,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des laboratoires d'analyse de l'eau]]></comment>
+	<tag name="bassin"/>
 	<position x="2560" y="660"/>
 	<column name="laboratoire_analyse_id" not-null="true" sequence="public.laboratoire_analyse_laboratoire_analyse_id_seq">
 		<type name="integer" length="0"/>
@@ -1979,6 +2054,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Lots issus des croisements (au moins un lot par croisement réussi)]]></comment>
+	<tag name="repro"/>
 	<position x="560" y="2640"/>
 	<column name="lot_id" not-null="true" sequence="public.lot_lot_id_seq">
 		<type name="integer" length="0"/>
@@ -2026,6 +2102,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Mesures effectuées sur un lot]]></comment>
+	<tag name="repro"/>
 	<position x="260" y="2640"/>
 	<column name="lot_mesure_id" not-null="true" sequence="public.lot_mesure_lot_mesure_id_seq">
 		<type name="integer" length="0"/>
@@ -2066,6 +2143,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Modèle de répartition des aliments pour les lots]]></comment>
+	<tag name="alimentation"/>
 	<position x="240" y="20"/>
 	<column name="lot_repart_template_id" not-null="true" sequence="public.lot_repart_template_lot_repart_template_id_seq">
 		<type name="integer" length="0"/>
@@ -2096,6 +2174,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des métaux analysés]]></comment>
+	<tag name="bassin"/>
 	<position x="2560" y="440"/>
 	<column name="metal_id" not-null="true" sequence="public.metal_metal_id_seq">
 		<type name="integer" length="0"/>
@@ -2152,6 +2231,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Données morphologiques]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="1200"/>
 	<column name="morphologie_id" not-null="true" sequence="public.morphologie_morphologie_id_seq">
 		<type name="integer" length="0"/>
@@ -2198,6 +2278,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Informations concernant la mortalité du poisson]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="1440"/>
 	<column name="mortalite_id" not-null="true" sequence="public.mortalite_mortalite_id_seq">
 		<type name="integer" length="0"/>
@@ -2232,6 +2313,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Types de mortalité]]></comment>
+	<tag name="poisson"/>
 	<position x="540" y="1440"/>
 	<column name="mortalite_type_id" not-null="true" sequence="public.mortalite_type_mortalite_type_id_seq">
 		<type name="integer" length="0"/>
@@ -2253,6 +2335,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Nom des nageoires]]></comment>
+	<tag name="poisson"/>
 	<position x="1720" y="1220"/>
 	<column name="nageoire_id" not-null="true" sequence="public.nageoire_nageoire_id_seq">
 		<type name="integer" length="0"/>
@@ -2274,6 +2357,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table contenant les parents d'un poisson]]></comment>
+	<tag name="poisson"/>
 	<position x="1160" y="840"/>
 	<column name="parent_poisson_id" not-null="true" sequence="public.parent_poisson_parent_poisson_id_seq">
 		<type name="integer" length="0"/>
@@ -2298,6 +2382,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Événement de détermination de la parenté]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="1640"/>
 	<column name="parente_id" not-null="true" sequence="public.parente_parente_id_seq">
 		<type name="integer" length="0"/>
@@ -2331,6 +2416,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Liste des pathologies subies par les poissons]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="2020"/>
 	<column name="pathologie_id" not-null="true" sequence="public.pathologie_pathologie_id_seq">
 		<type name="integer" length="0"/>
@@ -2368,6 +2454,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Types de pathologie rencontrés]]></comment>
+	<tag name="poisson"/>
 	<position x="540" y="2020"/>
 	<column name="pathologie_type_id" not-null="true" sequence="public.pathologie_type_pathologie_type_id_seq">
 		<type name="integer" length="0"/>
@@ -2392,6 +2479,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des marques utilisées pour suivre les poissons]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="660"/>
 	<column name="pittag_id" not-null="true" sequence="public.pittag_pittag_id_seq">
 		<type name="integer" length="0"/>
@@ -2427,6 +2515,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types de pittag]]></comment>
+	<tag name="poisson"/>
 	<position x="520" y="660"/>
 	<column name="pittag_type_id" not-null="true" sequence="public.pittag_type_pittag_type_id_seq">
 		<type name="integer" length="0"/>
@@ -2453,6 +2542,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des données des poissons pour une campagne de reproduction]]></comment>
+	<tag name="repro"/>
 	<position x="1180" y="2220"/>
 	<column name="poisson_campagne_id" not-null="true" sequence="public.poisson_campagne_poisson_campagne_id_seq">
 		<type name="integer" length="0"/>
@@ -2487,6 +2577,7 @@ Le premier chiffre correspond au lundi]]></comment>
 <table name="poisson_croisement" layer="0" collapse-mode="2" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
+	<tag name="repro"/>
 	<position x="1180" y="2420"/>
 	<column name="poisson_campagne_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -2503,6 +2594,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de liaison des poissons avec les documents]]></comment>
+	<tag name="poisson"/>
 	<position x="1700" y="1020"/>
 	<column name="poisson_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -2518,6 +2610,7 @@ Le premier chiffre correspond au lundi]]></comment>
 <table name="poisson" layer="0" collapse-mode="2" max-obj-count="13">
 	<schema name="public"/>
 	<role name="quinton"/>
+	<tag name="poisson"/>
 	<position x="1180" y="1020"/>
 	<column name="poisson_id" not-null="true" sequence="public.poisson_poisson_id_seq">
 		<type name="integer" length="0"/>
@@ -2570,6 +2663,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de rattachement des reproducteurs à une séquence de reproduction]]></comment>
+	<tag name="repro"/>
 	<position x="860" y="2220"/>
 	<column name="poisson_sequence_id" not-null="true" sequence="public.poisson_sequence_poisson_sequence_id_seq">
 		<type name="integer" length="0"/>
@@ -2605,6 +2699,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Statuts généraux des poissons (juvénile, adulte, relaché, mort, etc.)]]></comment>
+	<tag name="poisson"/>
 	<position x="860" y="1020"/>
 	<column name="poisson_statut_id" not-null="true" sequence="public.poisson_statut_poisson_statut_id_seq">
 		<type name="integer" length="0"/>
@@ -2626,6 +2721,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des profils thermiques d'un bassin]]></comment>
+	<tag name="bassin"/>
 	<position x="2560" y="1220"/>
 	<column name="profil_thermique_id" not-null="true" sequence="public.profil_thermique_profil_thermique_id_seq">
 		<type name="integer" length="0"/>
@@ -2655,6 +2751,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<comment><![CDATA[Table des types de profils thermiques
 1 : constaté
 2 : prévu]]></comment>
+	<tag name="bassin"/>
 	<position x="2560" y="1020"/>
 	<column name="profil_thermique_type_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -2678,6 +2775,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements rattachés à un poisson pendant une séquence de reproduction]]></comment>
+	<tag name="repro"/>
 	<position x="540" y="2220"/>
 	<column name="ps_evenement_id" not-null="true" sequence="public.ps_evenement_ps_evenement_id_seq">
 		<type name="integer" length="0"/>
@@ -2705,6 +2803,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des statuts possibles pour un poisson pendant une séquence]]></comment>
+	<tag name="repro"/>
 	<position x="260" y="2020"/>
 	<column name="ps_statut_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -2726,6 +2825,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Taux de repartition des aliments pour la repartition consideree]]></comment>
+	<tag name="alimentation"/>
 	<position x="500" y="180"/>
 	<column name="repart_aliment_id" not-null="true" sequence="public.repart_aliment_repart_aliment_id_seq">
 		<type name="integer" length="0"/>
@@ -2773,6 +2873,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Modèles de répartition des aliments]]></comment>
+	<tag name="alimentation"/>
 	<position x="500" y="20"/>
 	<column name="repart_template_id" not-null="true" sequence="public.repart_template_repart_template_id_seq">
 		<type name="integer" length="0"/>
@@ -2806,6 +2907,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Tableau hebdomadaire (ou autre) de répartition des aliments]]></comment>
+	<tag name="alimentation"/>
 	<position x="1440" y="180"/>
 	<column name="repartition_id" not-null="true" sequence="public.repartition_repartition_id_seq">
 		<type name="integer" length="0"/>
@@ -2843,6 +2945,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<comment><![CDATA[Table des statuts de la reproduction
 1 : adulte potentiel
 2 : pré-sélectionné]]></comment>
+	<tag name="repro"/>
 	<position x="1480" y="2220"/>
 	<column name="repro_statut_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -2906,6 +3009,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des salinités d'un bassin]]></comment>
+	<tag name="bassin"/>
 	<position x="2560" y="840"/>
 	<column name="salinite_id" not-null="true" sequence="public.salinite_salinite_id_seq">
 		<type name="integer" length="0"/>
@@ -2943,6 +3047,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements d'une séquence]]></comment>
+	<tag name="repro"/>
 	<position x="540" y="2420"/>
 	<column name="sequence_evenement_id" not-null="true" sequence="public.sequence_evenement_sequence_evenement_id_seq">
 		<type name="integer" length="0"/>
@@ -2971,6 +3076,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Séquences de reproduction]]></comment>
+	<tag name="repro"/>
 	<position x="860" y="2420"/>
 	<column name="sequence_id" not-null="true" sequence="public.sequence_sequence_id_seq">
 		<type name="integer" length="0"/>
@@ -3004,6 +3110,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des genres]]></comment>
+	<tag name="poisson"/>
 	<position x="540" y="1840"/>
 	<column name="sexe_id" not-null="true" sequence="public.sexe_sexe_id_seq">
 		<type name="integer" length="0"/>
@@ -3031,48 +3138,14 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sortie_lieu" layer="0" collapse-mode="2" max-obj-count="8">
-	<schema name="public"/>
-	<role name="quinton"/>
-	<comment><![CDATA[Lieux des sorties du stock des poissons]]></comment>
-	<position x="540" y="1020"/>
-	<column name="sortie_lieu_id" not-null="true" sequence="public.sortie_lieu_sortie_lieu_id_seq">
-		<type name="integer" length="0"/>
-	</column>
-	<column name="localisation" not-null="true">
-		<type name="character varying" length="0"/>
-		<comment><![CDATA[information textuelle sur le lieu de lacher]]></comment>
-	</column>
-	<column name="longitude_dd">
-		<type name="double precision" length="0"/>
-		<comment><![CDATA[Longitude du point de lâcher, en valeur décimale]]></comment>
-	</column>
-	<column name="latitude_dd">
-		<type name="double precision" length="0"/>
-		<comment><![CDATA[Latitude du point de lâcher, en décimal]]></comment>
-	</column>
-	<column name="actif" not-null="true" default-value="1">
-		<type name="smallint" length="0"/>
-		<comment><![CDATA[1 : point utilisé actuellement
-0 : ancien point de lâcher]]></comment>
-	</column>
-	<column name="poisson_statut_id">
-		<type name="integer" length="0"/>
-		<comment><![CDATA[Statut que prend le poisson après sortie du stock]]></comment>
-	</column>
-	<column name="point_geom">
-		<type name="geometry" length="0"/>
-		<comment><![CDATA[Point géographique, en WGS84]]></comment>
-	</column>
-	<constraint name="sortie_lieu_pk" type="pk-constr" table="public.sortie_lieu">
-		<columns names="sortie_lieu_id" ref-type="src-columns"/>
-	</constraint>
-</table>
+<extension name="postgis">
+</extension>
 
 <table name="sortie" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des sorties du stock]]></comment>
+	<tag name="poisson"/>
 	<position x="540" y="1200"/>
 	<column name="sortie_id" not-null="true" sequence="public.sortie_sortie_id_seq">
 		<type name="integer" length="0"/>
@@ -3117,6 +3190,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Aspect visuel du sperme]]></comment>
+	<tag name="repro"/>
 	<position x="1200" y="3080"/>
 	<column name="sperme_aspect_id" not-null="true" sequence="public.sperme_aspect_sperme_aspect_id_seq">
 		<type name="integer" length="0"/>
@@ -3133,6 +3207,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de relation entre sperme et sperme_caracteristique]]></comment>
+	<tag name="repro"/>
 	<position x="1200" y="2920"/>
 	<column name="sperme_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -3154,6 +3229,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des caractéristiques complémentaires du sperme]]></comment>
+	<tag name="repro"/>
 	<position x="900" y="3080"/>
 	<column name="sperme_caracteristique_id" not-null="true" sequence="public.sperme_caracteristique_sperme_caracteristique_id_seq">
 		<type name="integer" length="0"/>
@@ -3175,6 +3251,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des congélations de sperme]]></comment>
+	<tag name="repro"/>
 	<position x="2000" y="2920"/>
 	<column name="sperme_congelation_id" not-null="true" sequence="public.sperme_congelation_sperme_congelation_id_seq">
 		<type name="integer" length="0"/>
@@ -3234,6 +3311,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des produits de conservation utilisés pour la congélation des spermes]]></comment>
+	<tag name="repro"/>
 	<position x="2280" y="2920"/>
 	<column name="sperme_conservateur_id" not-null="true" sequence="public.sperme_conservateur_sperme_conservateur_id_seq">
 		<type name="integer" length="0"/>
@@ -3255,6 +3333,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Produit dilueur utilisé pour la congélation du sperme]]></comment>
+	<tag name="repro"/>
 	<position x="1480" y="3080"/>
 	<column name="sperme_dilueur_id" not-null="true" sequence="public.sperme_dilueur_sperme_dilueur_id_seq">
 		<type name="integer" length="0"/>
@@ -3276,6 +3355,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des mesures de vitesse de congélation]]></comment>
+	<tag name="repro"/>
 	<position x="2280" y="3080"/>
 	<column name="sperme_freezing_measure_id" not-null="true" sequence="public.sperme_freezing_measure_sperme_freezing_measure_id_seq">
 		<type name="integer" length="0"/>
@@ -3305,6 +3385,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Emplacement des paillettes]]></comment>
+	<tag name="repro"/>
 	<position x="2000" y="3200"/>
 	<column name="sperme_freezing_place_id" not-null="true" sequence="public.sperme_freezing_place_sperme_freezing_place_id_seq">
 		<type name="integer" length="0"/>
@@ -3344,6 +3425,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des mesures de qualité du sperme]]></comment>
+	<tag name="repro"/>
 	<position x="1700" y="2640"/>
 	<column name="sperme_mesure_id" not-null="true" sequence="public.sperme_mesure_sperme_mesure_id_seq">
 		<type name="integer" length="0"/>
@@ -3402,6 +3484,7 @@ Le premier chiffre correspond au lundi]]></comment>
 2 : moyenne
 3 : bonne
 4 : très bonne]]></comment>
+	<tag name="repro"/>
 	<position x="1980" y="2640"/>
 	<column name="sperme_qualite_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -3418,6 +3501,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de suivi de la qualité du sperme]]></comment>
+	<tag name="repro"/>
 	<position x="1480" y="2640"/>
 	<column name="sperme_id" not-null="true" sequence="public.sperme_sperme_id_seq">
 		<type name="integer" length="0"/>
@@ -3458,6 +3542,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Description détaillée du sperme utilisé dans un croisement]]></comment>
+	<tag name="repro"/>
 	<position x="1700" y="2920"/>
 	<column name="sperme_utilise_id" not-null="true" sequence="public.sperme_utilise_sperme_utilise_id_seq">
 		<type name="integer" length="0"/>
@@ -3493,6 +3578,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des stades de gonades]]></comment>
+	<tag name="poisson"/>
 	<position x="1720" y="1880"/>
 	<column name="stade_gonade_id" not-null="true" sequence="public.stade_gonade_stade_gonade_id_seq">
 		<type name="integer" length="0"/>
@@ -3514,6 +3600,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des stades de maturation des oeufs]]></comment>
+	<tag name="poisson"/>
 	<position x="1720" y="2000"/>
 	<column name="stade_oeuf_id" not-null="true" sequence="public.stade_oeuf_stade_oeuf_id_seq">
 		<type name="integer" length="0"/>
@@ -3535,6 +3622,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Description des transferts de poissons entre bassins]]></comment>
+	<tag name="poisson"/>
 	<position x="1440" y="840"/>
 	<column name="transfert_id" not-null="true" sequence="public.transfert_transfert_id_seq">
 		<type name="integer" length="0"/>
@@ -4155,6 +4243,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des relevés de ventilation pour un poissons (nombre de battements par minute)]]></comment>
+	<tag name="poisson"/>
 	<position x="1440" y="1020"/>
 	<column name="ventilation_id" not-null="true" sequence="public.ventilation_ventilation_id_seq">
 		<type name="integer" length="0"/>
@@ -4182,6 +4271,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[table des implantations des marques VIE]]></comment>
+	<tag name="repro"/>
 	<position x="260" y="2220"/>
 	<column name="vie_implantation_id" not-null="true" sequence="public.vie_implantation_vie_implantation_id_seq">
 		<type name="integer" length="0"/>
@@ -4198,6 +4288,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Modèles de marquages VIE]]></comment>
+	<tag name="repro"/>
 	<position x="260" y="2420"/>
 	<column name="vie_modele_id" not-null="true" sequence="public.vie_modele_vie_modele_id_seq">
 		<type name="integer" length="0"/>
@@ -4463,6 +4554,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<schema name="public"/>
 	<role name="postgres"/>
 	<comment><![CDATA[Liste des sites gérés]]></comment>
+	<tag name="bassin"/>
 	<position x="1960" y="180"/>
 	<column name="site_id" not-null="true" sequence="public.site_site_id_seq">
 		<type name="integer" length="0"/>
@@ -4479,6 +4571,7 @@ Le premier chiffre correspond au lundi]]></comment>
 <table name="sonde" layer="0" collapse-mode="2" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
+	<tag name="bassin"/>
 	<position x="2700" y="180"/>
 	<column name="sonde_id" not-null="true">
 		<type name="integer" length="0"/>
@@ -4493,6 +4586,45 @@ Le premier chiffre correspond au lundi]]></comment>
 	</column>
 	<constraint name="sonde_id_pk" type="pk-constr" table="public.sonde">
 		<columns names="sonde_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="sortie_lieu" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="public"/>
+	<role name="quinton"/>
+	<comment><![CDATA[Lieux des sorties du stock des poissons]]></comment>
+	<tag name="poisson"/>
+	<position x="540" y="1020"/>
+	<column name="sortie_lieu_id" not-null="true" sequence="public.sortie_lieu_sortie_lieu_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="localisation" not-null="true">
+		<type name="character varying" length="0"/>
+		<comment><![CDATA[information textuelle sur le lieu de lacher]]></comment>
+	</column>
+	<column name="longitude_dd">
+		<type name="double precision" length="0"/>
+		<comment><![CDATA[Longitude du point de lâcher, en valeur décimale]]></comment>
+	</column>
+	<column name="latitude_dd">
+		<type name="double precision" length="0"/>
+		<comment><![CDATA[Latitude du point de lâcher, en décimal]]></comment>
+	</column>
+	<column name="actif" not-null="true" default-value="1">
+		<type name="smallint" length="0"/>
+		<comment><![CDATA[1 : point utilisé actuellement
+0 : ancien point de lâcher]]></comment>
+	</column>
+	<column name="poisson_statut_id">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Statut que prend le poisson après sortie du stock]]></comment>
+	</column>
+	<column name="point_geom">
+		<type name="geometry" length="0"/>
+		<comment><![CDATA[Point géographique, en WGS84]]></comment>
+	</column>
+	<constraint name="sortie_lieu_pk" type="pk-constr" table="public.sortie_lieu">
+		<columns names="sortie_lieu_id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
@@ -5560,7 +5692,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<line>
 		<position x="399.609" y="1078.4"/>
 	<position x="399.609" y="997"/>
-	<position x="331.073" y="997"/>
+	<position x="331.072" y="997"/>
 	</line>
 </relationship>
 

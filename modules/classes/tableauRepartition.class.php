@@ -196,7 +196,7 @@ class TableauRepartition extends TCPDF {
 	 */
 	function sent($dateDebut="") {
 		if ($dateDebut == "") {
-			$dateDebut = date();
+			$dateDebut = date('d-m-Y');
 		}
 		$nomFichier = $this->param ["nomFichier"] . "_" . $this->dateDebut->format ( "d-m-Y" ) . ".pdf";
 		$this->Output ( $nomFichier, "I" );
@@ -546,7 +546,7 @@ class RepartitionJuvenile extends TableauRepartition {
 		$this->SetFillColor ( 255, 255, 255 );
 		$this->SetFont ( "", "B" );
 		$this->Cell ( 30, $this->param["hl"], "Total/jour", 1, 0, 'C', true );
-		$this->SetFont ();
+		$this->SetFont ("");
 		/*
 		 * Total par jour
 		 */
@@ -560,7 +560,7 @@ class RepartitionJuvenile extends TableauRepartition {
 		*/
 		$this->SetFont ( "", "B" );
 		$this->Cell ( 30, $this->param["hl"], "Total/sem", 1, 0, 'C', true );
-		$this->SetFont ();
+		$this->SetFont ("");
 		/*
 		 * Recuperation des totaux pour chaque aliment
 		*/

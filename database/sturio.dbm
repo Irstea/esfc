@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.2-beta1" last-position="0,0" last-zoom="1" max-obj-count="170"
+<dbmodel pgmodeler-ver="0.9.2" last-position="122,1677" last-zoom="0.7" max-obj-count="170"
 	 default-owner="postgres">
 <role name="quinton"
       superuser="true"
@@ -382,7 +382,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="aliment" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="aliment" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<tag name="alimentation"/>
@@ -410,7 +410,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	</constraint>
 </table>
 
-<table name="aliment_categorie" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="aliment_categorie" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Caractérisation de l'aliment par rapport à la catégorie de poisson nourri (adulte, juvénile, repro)]]></comment>
@@ -432,7 +432,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="aliment_quotidien" layer="0" collapse-mode="2" max-obj-count="4">
+<table name="aliment_quotidien" layer="0" collapse-mode="1" max-obj-count="4">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des répartitions quotidiennes d'aliments]]></comment>
@@ -461,7 +461,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="aliment_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="aliment_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Type d'aliment (naturel, artificiel, etc.)]]></comment>
@@ -483,7 +483,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="analyse_eau" layer="0" collapse-mode="2" max-obj-count="30">
+<table name="analyse_eau" layer="0" collapse-mode="1" max-obj-count="30">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Liste des analyses d'eau réalisées dans les circuits d'eau]]></comment>
@@ -597,7 +597,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="analyse_metal" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="analyse_metal" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des analyses des métaux]]></comment>
@@ -630,7 +630,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="anesthesie" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="anesthesie" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Tables des anesthésies pratiquées]]></comment>
@@ -669,7 +669,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="anesthesie_produit" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="anesthesie_produit" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Tables des produits utilisés pour l'anesthésie]]></comment>
@@ -695,7 +695,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="anomalie_db" layer="0" collapse-mode="2" max-obj-count="9">
+<table name="anomalie_db" layer="0" collapse-mode="1" max-obj-count="9">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des anomalies détectées dans la base de données]]></comment>
@@ -739,7 +739,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="anomalie_db_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="anomalie_db_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Types des anomalies détectées dans la base de données]]></comment>
@@ -761,7 +761,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin" layer="0" collapse-mode="2" max-obj-count="16">
+<table name="bassin" layer="0" collapse-mode="1" max-obj-count="16">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Description des bassins]]></comment>
@@ -827,7 +827,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin_campagne" layer="0" collapse-mode="2" max-obj-count="4">
+<table name="bassin_campagne" layer="0" collapse-mode="1" max-obj-count="4">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<tag name="bassin"/>
@@ -850,7 +850,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	</constraint>
 </table>
 
-<table name="bassin_document" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="bassin_document" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de liaison des bassins avec les documents]]></comment>
@@ -872,7 +872,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin_evenement" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="bassin_evenement" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements survenant dans les bassins]]></comment>
@@ -905,7 +905,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin_evenement_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="bassin_evenement_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types d'événements dans les bassins]]></comment>
@@ -927,7 +927,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin_lot" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="bassin_lot" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Suivi des lots dans les bassins]]></comment>
@@ -960,7 +960,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="bassin_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Type de bassin]]></comment>
@@ -982,7 +982,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin_usage" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="bassin_usage" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Élevage des adultes, des juvéniles, infirmerie, etc.]]></comment>
@@ -1007,7 +1007,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="bassin_zone" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="bassin_zone" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Zones d'implantation des bassins]]></comment>
@@ -1029,7 +1029,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="biopsie" layer="0" collapse-mode="2" max-obj-count="21">
+<table name="biopsie" layer="0" collapse-mode="1" max-obj-count="21">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Biopsies pratiquées et relevés biométriques correspondants]]></comment>
@@ -1107,7 +1107,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	</constraint>
 </table>
 
-<table name="biopsie_document" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="biopsie_document" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des documents associés avec la biopsie]]></comment>
@@ -1129,7 +1129,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="biopsie_technique_calcul" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="biopsie_technique_calcul" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des techniques utilisées pour le calcul du diamètre moyen des ovocytes
@@ -1153,7 +1153,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="categorie" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="categorie" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Catégorie ou destination de l'aliment (juvénile, adulte, reproduction...)]]></comment>
@@ -1176,7 +1176,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="circuit_eau" layer="0" collapse-mode="2" max-obj-count="4">
+<table name="circuit_eau" layer="0" collapse-mode="1" max-obj-count="4">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Circuit d'eau utilisé par le ou les bassins]]></comment>
@@ -1206,7 +1206,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="circuit_evenement" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="circuit_evenement" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements sur les circuits d'eau]]></comment>
@@ -1237,7 +1237,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="circuit_evenement_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="circuit_evenement_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types d'événement pour les circuits d'eau]]></comment>
@@ -1259,7 +1259,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="cohorte" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="cohorte" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des déterminations de cohortes]]></comment>
@@ -1298,7 +1298,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="cohorte_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="cohorte_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Type de détermination des cohortes]]></comment>
@@ -1320,7 +1320,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="croisement" layer="0" collapse-mode="2" max-obj-count="12">
+<table name="croisement" layer="0" collapse-mode="1" max-obj-count="12">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des croisements réalisés]]></comment>
@@ -1368,7 +1368,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	</constraint>
 </table>
 
-<table name="croisement_qualite" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="croisement_qualite" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Qualité des croisements (1 : très bon, 2 : bon, 3 : moyen, 4 : mauvais)]]></comment>
@@ -1390,7 +1390,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="determination_parente" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="determination_parente" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Méthodes de détermination de la parentèle d'un poisson
@@ -1415,7 +1415,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="devenir" layer="0" collapse-mode="2" max-obj-count="9">
+<table name="devenir" layer="0" collapse-mode="1" max-obj-count="9">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des devenirs des lots, et des lachers non rattachables]]></comment>
@@ -1453,7 +1453,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	</constraint>
 </table>
 
-<table name="devenir_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="devenir_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types de devenir :
@@ -1477,7 +1477,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="distrib_quotidien" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="distrib_quotidien" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table générale récapitulant les distributions quotidiennes]]></comment>
@@ -1510,7 +1510,7 @@ where longitude_start is not null and latitude_start is not null and geom_point 
 	<role name="quinton"/>
 </sequence>
 
-<table name="distribution" layer="0" collapse-mode="2" max-obj-count="19">
+<table name="distribution" layer="0" collapse-mode="1" max-obj-count="19">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de distribution des aliments pour une période donnée]]></comment>
@@ -1589,7 +1589,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="document" layer="0" collapse-mode="2" max-obj-count="10">
+<table name="document" layer="0" collapse-mode="1" max-obj-count="10">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Documents numériques rattachés à un poisson ou à un événement]]></comment>
@@ -1634,7 +1634,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="dosage_sanguin" layer="0" collapse-mode="2" max-obj-count="12">
+<table name="dosage_sanguin" layer="0" collapse-mode="1" max-obj-count="12">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des dosages sanguins]]></comment>
@@ -1684,7 +1684,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="echographie" layer="0" collapse-mode="2" max-obj-count="10">
+<table name="echographie" layer="0" collapse-mode="1" max-obj-count="10">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Echographies réalisées]]></comment>
@@ -1731,7 +1731,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="evenement_document" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="evenement_document" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de liaison des événements avec des documents]]></comment>
@@ -1748,7 +1748,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="evenement" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="evenement" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements ou des opérations particulières réalisées]]></comment>
@@ -1780,7 +1780,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="evenement_type" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="evenement_type" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types d'événements]]></comment>
@@ -1806,7 +1806,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="gender_methode" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="gender_methode" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Méthodes de détermination du sexe]]></comment>
@@ -1828,7 +1828,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="gender_selection" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="gender_selection" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Opérations de détermination du sexe]]></comment>
@@ -1866,7 +1866,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="genetique" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="genetique" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des prélèvements réalisés pour des tests génétiques]]></comment>
@@ -1904,7 +1904,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="hormone" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="hormone" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des hormones injectées lors des reproductions]]></comment>
@@ -1931,7 +1931,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="import_alim" layer="0" collapse-mode="2" max-obj-count="14">
+<table name="import_alim" layer="0" collapse-mode="1" max-obj-count="14">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table temporaire pour importer les aliments, entre deux dates]]></comment>
@@ -1983,7 +1983,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="injection" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="injection" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des injections d'hormones]]></comment>
@@ -2022,7 +2022,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="laboratoire_analyse" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="laboratoire_analyse" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des laboratoires d'analyse de l'eau]]></comment>
@@ -2050,7 +2050,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="lot" layer="0" collapse-mode="2" max-obj-count="9">
+<table name="lot" layer="0" collapse-mode="1" max-obj-count="9">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Lots issus des croisements (au moins un lot par croisement réussi)]]></comment>
@@ -2098,7 +2098,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="lot_mesure" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="lot_mesure" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Mesures effectuées sur un lot]]></comment>
@@ -2139,7 +2139,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="lot_repart_template" layer="0" collapse-mode="2" max-obj-count="4">
+<table name="lot_repart_template" layer="0" collapse-mode="1" max-obj-count="4">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Modèle de répartition des aliments pour les lots]]></comment>
@@ -2170,7 +2170,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="metal" layer="0" collapse-mode="2" max-obj-count="4">
+<table name="metal" layer="0" collapse-mode="1" max-obj-count="4">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des métaux analysés]]></comment>
@@ -2201,7 +2201,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="mime_type" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="mime_type" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types mime, pour les documents associés]]></comment>
@@ -2227,7 +2227,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="morphologie" layer="0" collapse-mode="2" max-obj-count="10">
+<table name="morphologie" layer="0" collapse-mode="1" max-obj-count="10">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Données morphologiques]]></comment>
@@ -2274,7 +2274,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="mortalite" layer="0" collapse-mode="2" max-obj-count="7">
+<table name="mortalite" layer="0" collapse-mode="1" max-obj-count="7">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Informations concernant la mortalité du poisson]]></comment>
@@ -2309,7 +2309,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="mortalite_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="mortalite_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Types de mortalité]]></comment>
@@ -2331,7 +2331,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="nageoire" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="nageoire" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Nom des nageoires]]></comment>
@@ -2353,7 +2353,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="parent_poisson" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="parent_poisson" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table contenant les parents d'un poisson]]></comment>
@@ -2378,7 +2378,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="parente" layer="0" collapse-mode="2" max-obj-count="7">
+<table name="parente" layer="0" collapse-mode="1" max-obj-count="7">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Événement de détermination de la parenté]]></comment>
@@ -2412,7 +2412,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="pathologie" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="pathologie" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Liste des pathologies subies par les poissons]]></comment>
@@ -2450,7 +2450,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="pathologie_type" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="pathologie_type" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Types de pathologie rencontrés]]></comment>
@@ -2475,7 +2475,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="pittag" layer="0" collapse-mode="2" max-obj-count="7">
+<table name="pittag" layer="0" collapse-mode="1" max-obj-count="7">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des marques utilisées pour suivre les poissons]]></comment>
@@ -2511,7 +2511,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="pittag_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="pittag_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types de pittag]]></comment>
@@ -2538,7 +2538,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="poisson_campagne" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="poisson_campagne" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des données des poissons pour une campagne de reproduction]]></comment>
@@ -2574,7 +2574,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="poisson_croisement" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="poisson_croisement" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<tag name="repro"/>
@@ -2590,7 +2590,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="poisson_document" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="poisson_document" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de liaison des poissons avec les documents]]></comment>
@@ -2607,7 +2607,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="poisson" layer="0" collapse-mode="2" max-obj-count="13">
+<table name="poisson" layer="0" collapse-mode="1" max-obj-count="13">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<tag name="poisson"/>
@@ -2659,7 +2659,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="poisson_sequence" layer="0" collapse-mode="2" max-obj-count="7">
+<table name="poisson_sequence" layer="0" collapse-mode="1" max-obj-count="7">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de rattachement des reproducteurs à une séquence de reproduction]]></comment>
@@ -2695,7 +2695,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="poisson_statut" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="poisson_statut" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Statuts généraux des poissons (juvénile, adulte, relaché, mort, etc.)]]></comment>
@@ -2717,7 +2717,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="profil_thermique" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="profil_thermique" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des profils thermiques d'un bassin]]></comment>
@@ -2745,7 +2745,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="profil_thermique_type" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="profil_thermique_type" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des types de profils thermiques
@@ -2771,7 +2771,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="ps_evenement" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="ps_evenement" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements rattachés à un poisson pendant une séquence de reproduction]]></comment>
@@ -2799,7 +2799,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="ps_statut" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="ps_statut" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des statuts possibles pour un poisson pendant une séquence]]></comment>
@@ -2821,7 +2821,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="repart_aliment" layer="0" collapse-mode="2" max-obj-count="10">
+<table name="repart_aliment" layer="0" collapse-mode="1" max-obj-count="10">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Taux de repartition des aliments pour la repartition consideree]]></comment>
@@ -2869,7 +2869,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="repart_template" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="repart_template" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Modèles de répartition des aliments]]></comment>
@@ -2903,7 +2903,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="repartition" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="repartition" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Tableau hebdomadaire (ou autre) de répartition des aliments]]></comment>
@@ -2939,7 +2939,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="repro_statut" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="repro_statut" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des statuts de la reproduction
@@ -2963,7 +2963,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="requete" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="requete" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des requêtes dans la base de données]]></comment>
@@ -3005,7 +3005,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="salinite" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="salinite" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des salinités d'un bassin]]></comment>
@@ -3043,7 +3043,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sequence_evenement" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="sequence_evenement" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des événements d'une séquence]]></comment>
@@ -3072,7 +3072,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="sequence" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="sequence" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Séquences de reproduction]]></comment>
@@ -3106,7 +3106,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sexe" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="sexe" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des genres]]></comment>
@@ -3141,7 +3141,7 @@ Le premier chiffre correspond au lundi]]></comment>
 <extension name="postgis">
 </extension>
 
-<table name="sortie" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="sortie" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des sorties du stock]]></comment>
@@ -3186,7 +3186,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_aspect" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="sperme_aspect" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Aspect visuel du sperme]]></comment>
@@ -3203,7 +3203,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="sperme_caract" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="sperme_caract" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de relation entre sperme et sperme_caracteristique]]></comment>
@@ -3225,7 +3225,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_caracteristique" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="sperme_caracteristique" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des caractéristiques complémentaires du sperme]]></comment>
@@ -3247,7 +3247,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_congelation" layer="0" collapse-mode="2" max-obj-count="15">
+<table name="sperme_congelation" layer="0" collapse-mode="1" max-obj-count="15">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des congélations de sperme]]></comment>
@@ -3307,7 +3307,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_conservateur" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="sperme_conservateur" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des produits de conservation utilisés pour la congélation des spermes]]></comment>
@@ -3329,7 +3329,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_dilueur" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="sperme_dilueur" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Produit dilueur utilisé pour la congélation du sperme]]></comment>
@@ -3351,7 +3351,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_freezing_measure" layer="0" collapse-mode="2" max-obj-count="4">
+<table name="sperme_freezing_measure" layer="0" collapse-mode="1" max-obj-count="4">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des mesures de vitesse de congélation]]></comment>
@@ -3381,12 +3381,12 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_freezing_place" layer="0" collapse-mode="2" max-obj-count="7">
+<table name="sperme_freezing_place" layer="0" collapse-mode="1" max-obj-count="7">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Emplacement des paillettes]]></comment>
 	<tag name="repro"/>
-	<position x="2000" y="3200"/>
+	<position x="2000" y="3240"/>
 	<column name="sperme_freezing_place_id" not-null="true" sequence="public.sperme_freezing_place_sperme_freezing_place_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -3421,7 +3421,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_mesure" layer="0" collapse-mode="2" max-obj-count="14">
+<table name="sperme_mesure" layer="0" collapse-mode="1" max-obj-count="14">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des mesures de qualité du sperme]]></comment>
@@ -3476,7 +3476,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="sperme_qualite" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="sperme_qualite" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de notation de la qualité globale du sperme
@@ -3497,7 +3497,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="sperme" layer="0" collapse-mode="2" max-obj-count="9">
+<table name="sperme" layer="0" collapse-mode="1" max-obj-count="9">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table de suivi de la qualité du sperme]]></comment>
@@ -3538,7 +3538,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="sperme_utilise" layer="0" collapse-mode="2" max-obj-count="7">
+<table name="sperme_utilise" layer="0" collapse-mode="1" max-obj-count="7">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Description détaillée du sperme utilisé dans un croisement]]></comment>
@@ -3574,7 +3574,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="stade_gonade" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="stade_gonade" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des stades de gonades]]></comment>
@@ -3596,7 +3596,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="stade_oeuf" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="stade_oeuf" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des stades de maturation des oeufs]]></comment>
@@ -3618,7 +3618,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="transfert" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="transfert" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Description des transferts de poissons entre bassins]]></comment>
@@ -3650,7 +3650,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<view name="v_bassin_alim_quotidien" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_bassin_alim_quotidien" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="280" y="3200"/>
@@ -3712,7 +3712,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_distribution" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_distribution" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="540" y="3200"/>
@@ -3806,7 +3806,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_gender_selection" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_gender_selection" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="760" y="3200"/>
@@ -3848,7 +3848,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_parent_poisson_ntile" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_parent_poisson_ntile" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Préparation de la liste des parents, avec numéro d'ordre, pour utilisation par la vue v_parents]]></comment>
@@ -3870,7 +3870,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_parents" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_parents" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Liste des parents d'un poisson]]></comment>
@@ -3904,7 +3904,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_pittag_by_poisson" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_pittag_by_poisson" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1400" y="3220"/>
@@ -3922,7 +3922,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_poisson_bassins" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_poisson_bassins" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Liste des bassins fréquentés par un poisson]]></comment>
@@ -3957,7 +3957,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_poisson_last_bassin" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_poisson_last_bassin" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="760" y="3400"/>
@@ -3994,7 +3994,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_poisson_last_lf" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_poisson_last_lf" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1000" y="3400"/>
@@ -4026,7 +4026,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_poisson_last_lt" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_poisson_last_lt" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1200" y="3400"/>
@@ -4058,7 +4058,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_poisson_last_masse" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_poisson_last_masse" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1420" y="3400"/>
@@ -4090,7 +4090,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_prenom_parent_femelle" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_prenom_parent_femelle" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1660" y="3400"/>
@@ -4110,7 +4110,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_prenom_parents" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_prenom_parents" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1940" y="3400"/>
@@ -4129,7 +4129,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_prenom_parents_male" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_prenom_parents_male" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1000" y="3580"/>
@@ -4149,7 +4149,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_sperme_congelation_date" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_sperme_congelation_date" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1260" y="3580"/>
@@ -4167,7 +4167,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</reference>
 </view>
 
-<view name="v_transfert_last_bassin_for_poisson" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_transfert_last_bassin_for_poisson" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="1540" y="3580"/>
@@ -4195,7 +4195,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<view name="v_vie_modele" layer="0" collapse-mode="2" max-obj-count="1">
+<view name="v_vie_modele" layer="0" collapse-mode="1" max-obj-count="1">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<position x="280" y="3420"/>
@@ -4239,7 +4239,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="quinton"/>
 </sequence>
 
-<table name="ventilation" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="ventilation" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Table des relevés de ventilation pour un poissons (nombre de battements par minute)]]></comment>
@@ -4267,7 +4267,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="vie_implantation" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="vie_implantation" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[table des implantations des marques VIE]]></comment>
@@ -4284,7 +4284,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="vie_modele" layer="0" collapse-mode="2" max-obj-count="6">
+<table name="vie_modele" layer="0" collapse-mode="1" max-obj-count="6">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Modèles de marquages VIE]]></comment>
@@ -4550,7 +4550,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	<role name="postgres"/>
 </sequence>
 
-<table name="site" layer="0" collapse-mode="2" max-obj-count="2">
+<table name="site" layer="0" collapse-mode="1" max-obj-count="2">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<comment><![CDATA[Liste des sites gérés]]></comment>
@@ -4568,7 +4568,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="sonde" layer="0" collapse-mode="2" max-obj-count="3">
+<table name="sonde" layer="0" collapse-mode="1" max-obj-count="3">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<tag name="bassin"/>
@@ -4589,7 +4589,7 @@ Le premier chiffre correspond au lundi]]></comment>
 	</constraint>
 </table>
 
-<table name="sortie_lieu" layer="0" collapse-mode="2" max-obj-count="8">
+<table name="sortie_lieu" layer="0" collapse-mode="1" max-obj-count="8">
 	<schema name="public"/>
 	<role name="quinton"/>
 	<comment><![CDATA[Lieux des sorties du stock des poissons]]></comment>
@@ -4627,6 +4627,14 @@ Le premier chiffre correspond au lundi]]></comment>
 		<columns names="sortie_lieu_id" ref-type="src-columns"/>
 	</constraint>
 </table>
+
+<index name="poisson_campagne_poisson_id_idx" table="public.poisson_campagne"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="poisson_id"/>
+		</idxelement>
+</index>
 
 <constraint name="aliment_type_aliment_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.aliment_type" table="public.aliment">
@@ -5312,12 +5320,6 @@ Le premier chiffre correspond au lundi]]></comment>
 	<columns names="site_id" ref-type="dst-columns"/>
 </constraint>
 
-<constraint name="poisson_statut_sortie_lieu_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.poisson_statut" table="public.sortie_lieu">
-	<columns names="poisson_statut_id" ref-type="src-columns"/>
-	<columns names="poisson_statut_id" ref-type="dst-columns"/>
-</constraint>
-
 <constraint name="evenement_sortie_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.evenement" table="public.sortie">
 	<columns names="evenement_id" ref-type="src-columns"/>
@@ -5478,6 +5480,12 @@ Le premier chiffre correspond au lundi]]></comment>
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.vie_implantation" table="public.vie_modele">
 	<columns names="vie_implantation_id2" ref-type="src-columns"/>
 	<columns names="vie_implantation_id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="poisson_statut_sortie_lieu_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.poisson_statut" table="public.sortie_lieu">
+	<columns names="poisson_statut_id" ref-type="src-columns"/>
+	<columns names="poisson_statut_id" ref-type="dst-columns"/>
 </constraint>
 
 <relationship name="rel_aliment_aliment_type" type="relfk" layer="0"
@@ -5690,9 +5698,9 @@ Le premier chiffre correspond au lundi]]></comment>
 	 dst-table="public.devenir" reference-fk="devenir_devenir_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="399.609" y="1078.4"/>
-	<position x="399.609" y="997"/>
-	<position x="331.072" y="997"/>
+		<position x="386.562" y="1084.4"/>
+	<position x="386.562" y="997"/>
+	<position x="322.375" y="997"/>
 	</line>
 </relationship>
 

@@ -3,7 +3,7 @@ require_once 'modules/classes/poisson.class.php';
 /**
  *
  * @author quinton
- *        
+ *
  */
 class PoissonCampagne extends ObjetBDD
 {
@@ -12,7 +12,7 @@ class PoissonCampagne extends ObjetBDD
 	 *
 	 * @param
 	 *        	instance ADODB
-	 *        	
+	 *
 	 */
 	public function __construct($p_connection, $param = null)
 	{
@@ -72,8 +72,8 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Calcule le taux de croissance d'un poisson
 	 *
-	 * @param int $poisson_id        	
-	 * @param int $annee        	
+	 * @param int $poisson_id
+	 * @param int $annee
 	 * @return array
 	 */
 	function txCroissanceJourCalcul($poisson_id, $annee = null)
@@ -118,7 +118,7 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Initialise globalement une campagne
 	 *
-	 * @param int $annee        	
+	 * @param int $annee
 	 * @return int $nb : nombre de poissons ajoutés
 	 */
 	function initCampagne($annee)
@@ -129,8 +129,8 @@ class PoissonCampagne extends ObjetBDD
 			 * recherche des adultes qui n'existent pas dans la table poisson_campagne pour l'annee consideree
 			 */
 			$sql = "select p.poisson_id from poisson p
-				where categorie_id = 1 
-				and poisson_statut_id = 1 
+				where categorie_id = 1
+				and poisson_statut_id = 1
 				and p.poisson_id not in (select c.poisson_id from poisson_campagne c where annee = " . $annee . ")";
 			$liste = $this->getListeParam($sql);
 			/*
@@ -147,8 +147,8 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Initialise une annee de campagne pour un poisson
 	 *
-	 * @param int $poisson_id        	
-	 * @param int $annee        	
+	 * @param int $poisson_id
+	 * @param int $annee
 	 * @return int
 	 */
 	function initCampagnePoisson($poisson_id, $annee)
@@ -183,7 +183,7 @@ class PoissonCampagne extends ObjetBDD
 	function lireFromPoissonAnnee($poisson_id, $annee)
 	{
 		if ($poisson_id > 0 && $annee > 0) {
-			$sql = "select * from poisson_campagne 
+			$sql = "select * from poisson_campagne
 					where poisson_id = " . $poisson_id . "
 					and annee = " . $annee;
 			return $this->lireParam($sql);
@@ -194,14 +194,14 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * retourne les poissons retenus pour une année
 	 *
-	 * @param array $param        	
+	 * @param array $param
 	 * @return array number
 	 */
 	function getListForDisplay($param)
 	{
 		$param = $this->encodeData($param);
-		if ($param["annee"] > 0 ) {
-			$sql = "select poisson_campagne_id, poisson_id, 
+		if ($param["annee"] > 0) {
+			$sql = "select poisson_campagne_id, poisson_id,
 					matricule, prenom, pittag_valeur, cohorte,
 				tx_croissance_journalier, specific_growth_rate,
 				sexe_libelle, sexe_libelle_court, masse,
@@ -216,13 +216,13 @@ class PoissonCampagne extends ObjetBDD
 				left outer join v_pittag_by_poisson using (poisson_id)
 				left outer join v_poisson_last_bassin using (poisson_id)
 				";
-			$psql = array("annee"=>$param["annee"]);
+			$psql = array("annee" => $param["annee"]);
 			$where = " where annee = :annee";
 			if ($param["repro_statut_id"] > 0 && is_numeric($param["repro_statut_id"])) {
-				$where .= " and repro_statut_id = :repro_statut_id" ; 
+				$where .= " and repro_statut_id = :repro_statut_id";
 				$psql["repro_statut_id"] = $param["repro_statut_id"];
 			}
-			if ($param["site_id"]> 0 ) {
+			if ($param["site_id"] > 0) {
 				$where .= " and site_id = :site_id";
 				$psql["site_id"] = $param["site_id"];
 			}
@@ -234,7 +234,10 @@ class PoissonCampagne extends ObjetBDD
 			 */
 			foreach ($liste as $key => $value) {
 				$liste[$key]["annees"] = $this->getAnneeCroisement($value["poisson_id"]);
-				$liste[$key]["sequences"] = $this->getSequences($value["poisson_id"], $annee);
+				$annees = explode(",", $liste[$key]["annees"]);
+				if ($annees[0] > 0) {
+					$liste[$key]["sequences"] = $this->getSequences($value["poisson_id"], $annees);
+				}
 			}
 			return $liste;
 		} else
@@ -243,26 +246,27 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Recherche les années de croisement pour un poisson
 	 *
-	 * @param int $poisson_id        	
+	 * @param int $poisson_id
 	 * @return string
 	 */
 	function getAnneeCroisement($poisson_id)
 	{
 		$annees = "";
 		if ($poisson_id > 0 && is_numeric($poisson_id)) {
-			$sql = "select distinct annee 
-					from poisson_campagne 
+			$sql = "select distinct annee
+					from poisson_campagne
 					join poisson_croisement using(poisson_campagne_id)
-					where poisson_id = " . $poisson_id . " 
+					where poisson_id = " . $poisson_id . "
 					order by annee";
 			$liste = $this->getListeParam($sql);
 			$virgule = false;
 			foreach ($liste as $key => $value) {
-				$annees .= $value["annee"];
-				if ($virgule == true)
+				if ($virgule == true) {
 					$annees .= ",";
-				else
+				} else {
 					$virgule = true;
+				}
+				$annees .= $value["annee"];
 			}
 		}
 		return $annees;
@@ -270,18 +274,34 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Retourne la liste des sequences pour un poisson, pour une annee
 	 *
-	 * @param int $poisson_id        	
-	 * @param int $annee        	
+	 * @param int $poisson_id
+	 * @param int|array $annee
 	 * @return tableau|NULL
 	 */
 	function getListSequence($poisson_id, $annee, $isPoissonCampagne = true)
 	{
-		if ($poisson_id > 0 && is_numeric($poisson_id) && $annee > 0 && is_numeric($annee)) {
-			$sql = "select distinct sequence_id, sequence_nom, sequence_date_debut
+		if ($poisson_id > 0 && is_numeric($poisson_id)) {
+			$sql = "select distinct sequence_id, s.annee, sequence_nom, sequence_date_debut
 					from sequence s
 					join poisson_sequence using (sequence_id)
-					join poisson_campagne using (poisson_campagne_id)
-					where s.annee = " . $annee;
+					join poisson_campagne using (poisson_campagne_id)";
+			if (is_array($annee)) {
+				$sql .= " where s.annee in (";
+				$annees = "";
+				$comma = false;
+				foreach ($annee as $an) {
+					if ($comma) {
+						$sql .= ",";
+					} else {
+						$comma = true;
+					}
+					$sql .= $an;
+				}
+				$sql .= ")";
+			} else {
+				$sql .= " where s.annee = " . $annee;
+			}
+
 			if ($isPoissonCampagne == true) {
 				$sql .= " and poisson_campagne_id = " . $poisson_id;
 			} else {
@@ -289,15 +309,16 @@ class PoissonCampagne extends ObjetBDD
 			}
 			$sql .= " order by sequence_date_debut, sequence_nom";
 			return $this->getListeParam($sql);
-		} else
+		} else {
 			return null;
+		}
 	}
 
 	/**
 	 * Retourne les séquences auxquelles participe un poisson, sous forme textuelle
 	 *
-	 * @param int $poisson_id        	
-	 * @param int $annee        	
+	 * @param int $poisson_id
+	 * @param int $annee
 	 * @return string
 	 */
 	function getSequences($poisson_id, $annee)
@@ -306,11 +327,12 @@ class PoissonCampagne extends ObjetBDD
 		$liste = $this->getListSequence($poisson_id, $annee, false);
 		$virgule = false;
 		foreach ($liste as $key => $value) {
-			$sequences .= $value["sequence_nom"];
-			if ($virgule == true)
+			if ($virgule == true) {
 				$sequences .= ",";
-			else
+			} else {
 				$virgule = true;
+			}
+			$sequences .= $value["annee"]."-".$value["sequence_nom"];
 		}
 		return $sequences;
 	}
@@ -386,7 +408,7 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Retourne la liste des campagnes de reproduction pour un poisson
 	 *
-	 * @param int $poisson_id        	
+	 * @param int $poisson_id
 	 * @return tableau|NULL
 	 */
 	function getListFromPoisson($poisson_id)
@@ -407,8 +429,8 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Change le statut du poisson
 	 *
-	 * @param int $poisson_campagne_id        	
-	 * @param int $repro_statut_id        	
+	 * @param int $poisson_campagne_id
+	 * @param int $repro_statut_id
 	 * @return int
 	 */
 	function changeStatut($poisson_campagne_id, $repro_statut_id)
@@ -424,9 +446,9 @@ class PoissonCampagne extends ObjetBDD
 	/**
 	 * Fonction permettant de restituer l'ensemble des temperatures des bassins frequentes par un poisson
 	 *
-	 * @param int $poisson_campagne_id        	
-	 * @param int $annee        	
-	 * @param int $profil_thermique_type_id        	
+	 * @param int $poisson_campagne_id
+	 * @param int $annee
+	 * @param int $profil_thermique_type_id
 	 * @return array|NULL
 	 */
 	function getTemperatures($poisson_id, $annee, $profil_thermique_type_id = 1)
@@ -453,7 +475,6 @@ class PoissonCampagne extends ObjetBDD
 					where poisson_id = " . $poisson_id . "
 					and temperature is not null
 					order by analyse_eau_date";
-
 			} else {
 				/*
 				 * Traitement des valeurs prevues
@@ -463,8 +484,8 @@ class PoissonCampagne extends ObjetBDD
     				pt.pf_temperature,pt.profil_thermique_type_id
 				   FROM v_poisson_bassins b
 				     join bassin_campagne bc on bc.bassin_id = b.bassin_id
-				     JOIN profil_thermique pt ON (bc.bassin_campagne_id = pt.bassin_campagne_id 
-						AND pt.pf_datetime between b.date_debut 
+				     JOIN profil_thermique pt ON (bc.bassin_campagne_id = pt.bassin_campagne_id
+						AND pt.pf_datetime between b.date_debut
 						AND CASE WHEN b.date_fin IS NULL THEN 'now'::text::date ELSE b.date_fin END
 						)
 					where poisson_id = " . $poisson_id . "
@@ -473,7 +494,7 @@ class PoissonCampagne extends ObjetBDD
 					order by pf_datetime";
 			}
 			$data = $this->getListeParam($sql);
-			
+
 			/*
 			 * Remise en forme des dates
 			 */
@@ -490,7 +511,7 @@ class PoissonCampagne extends ObjetBDD
  * ORM de gestion de la table repro_statut
  *
  * @author quinton
- *        
+ *
  */
 class ReproStatut extends ObjetBDD
 {
@@ -519,5 +540,3 @@ class ReproStatut extends ObjetBDD
 		parent::__construct($p_connection, $param);
 	}
 }
-
-?>

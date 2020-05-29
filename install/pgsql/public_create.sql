@@ -6362,3 +6362,15 @@ VALUES
   ('Œil droit'),
   ('Écusson aval'),
   ('Rostre aval');
+
+CREATE INDEX poisson_campagne_poisson_id_idx ON public.poisson_campagne
+	USING btree
+	(
+	  poisson_id
+	);
+
+CREATE INDEX transfert_poisson_id_idx ON public.transfert
+	USING btree
+	(
+	  poisson_id
+	);

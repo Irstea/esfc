@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.2" last-position="122,1677" last-zoom="0.7" max-obj-count="170"
+<dbmodel pgmodeler-ver="0.9.2" last-position="119,1616" last-zoom="0.7" max-obj-count="170"
 	 default-owner="postgres">
 <role name="quinton"
       superuser="true"
@@ -4629,6 +4629,14 @@ Le premier chiffre correspond au lundi]]></comment>
 </table>
 
 <index name="poisson_campagne_poisson_id_idx" table="public.poisson_campagne"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="poisson_id"/>
+		</idxelement>
+</index>
+
+<index name="transfert_poisson_id_idx" table="public.transfert"
 	 concurrent="false" unique="false" fast-update="false" buffering="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">

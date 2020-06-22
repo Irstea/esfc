@@ -63,7 +63,7 @@ class Sperme extends ObjetBDD
             "sperme_volume" => array(
                 "type" => 1
             ),
-            
+
             "sperme_commentaire" => array(
                 "type" => 0
             ),
@@ -71,7 +71,7 @@ class Sperme extends ObjetBDD
                 "type" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -86,7 +86,7 @@ class Sperme extends ObjetBDD
     {
         $id = parent::ecrire($data);
         if ($id > 0 && strlen($_REQUEST["sperme_mesure_date"]) > 0) {
-            
+
             $data["sperme_id"] = $id;
             /*
              * Ecriture des caracteristiques
@@ -156,7 +156,7 @@ class Sperme extends ObjetBDD
          */
         $ok = true;
         foreach ($poissons as $value) {
-            if (! is_numeric($value))
+            if (!is_numeric($value))
                 $ok = false;
         }
         if (count($poissons) == 0)
@@ -191,10 +191,11 @@ class Sperme extends ObjetBDD
 					join poisson_campagne using (poisson_campagne_id)
 					where croisement_id = " . $croisement_id . "
 						and (congelation_date is not null
-					or sperme.sequence_id = croisement.sequence_id))";
+                    or sperme.sequence_id = croisement.sequence_id))
+                    ";
             $order = " order by prenom, matricule, sperme_date";
-            // printr($this->sql.$this->from. $where.$order);
-            return $this->getListeParam($sql . $from . $where . $order);
+            $sql = "with req as ($sql $from $where ) select * from req $order";
+            return $this->getListeParam($sql);
         }
     }
 
@@ -264,7 +265,7 @@ class SpermeQualite extends ObjetBDD
                 "requis" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -303,7 +304,7 @@ class SpermeCongelation extends ObjetBDD
                 "requis" => 1,
                 "parentAttrib" => 1
             ),
-            
+
             "congelation_date" => array(
                 "type" => 2,
                 "requis" => 1
@@ -340,7 +341,7 @@ class SpermeCongelation extends ObjetBDD
                 "type" => 0
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -358,8 +359,7 @@ class SpermeCongelation extends ObjetBDD
             $order = " order by congelation_date";
             $arg = array(
                 "sperme_id" => $sperme_id
-            );
-            ;
+            );;
             return $this->getListeParamAsPrepared($this->sql . $where . $order, $arg);
         }
     }
@@ -435,7 +435,7 @@ class SpermeMesure extends ObjetBDD
                 "type" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -537,7 +537,7 @@ class SpermeDilueur extends ObjetBDD
                 "requis" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -571,7 +571,7 @@ class SpermeCaracteristique extends ObjetBDD
                 "requis" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -614,7 +614,7 @@ class SpermeCaract extends ObjetBDD
                 "requis" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -648,7 +648,7 @@ class SpermeAspect extends ObjetBDD
                 "requis" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -693,7 +693,7 @@ class SpermeUtilise extends ObjetBDD
                 "type" => 1
             )
         );
-        if (! is_array($param))
+        if (!is_array($param))
             $param = array();
         $param["fullDescription"] = 1;
         parent::__construct($bdd, $param);
@@ -713,7 +713,7 @@ class SpermeUtilise extends ObjetBDD
          */
         $dataold = $this->lire($data["sperme_utilise_id"]);
         $retour = parent::ecrire($data);
-        
+
         if ($retour > 0) {
             if (($dataold["nb_paillette_croisement"] > 0 || $data["nb_paillette_croisement"] > 0) && $data["sperme_congelation_id"] > 0) {
                 $sc = new SpermeCongelation($this->connection, $this->paramori);
@@ -772,7 +772,7 @@ class SpermeConservateur extends ObjetBDD
         // Si toutes les colonnes de la table sont decrites :
         $this->fullDescription = 1;
         // Appel du constructeur de la classe ObjetBDD
-        
+
         parent::__construct($bdd, $param);
     }
 }
@@ -813,7 +813,7 @@ class SpermeFreezingPlace extends ObjetBDD
         // Si toutes les colonnes de la table sont decrites :
         $this->fullDescription = 1;
         // Appel du constructeur de la classe ObjetBDD
-        
+
         parent::__construct($bdd, $param);
     }
 }
@@ -848,7 +848,7 @@ class SpermeFreezingMeasure extends ObjetBDD
         );
 
         // Appel du constructeur de la classe ObjetBDD
-        
+
         parent::__construct($bdd, $param);
     }
     /**
@@ -858,24 +858,23 @@ class SpermeFreezingMeasure extends ObjetBDD
      * {@inheritDoc}
      * @see ObjetBDD::getDefaultValue()
      */
-    function getDefaultValue($parentValue = 0) {
+    function getDefaultValue($parentValue = 0)
+    {
         $data = parent::getDefaultValue($parentValue);
         /*
          * Recherche de la derniere date enregistree
          */
         if ($parentValue > 0) {
-            $sql = "select measure_date as mt from sperme_freezing_measure".
-                " where sperme_congelation_id = :id".
+            $sql = "select measure_date as mt from sperme_freezing_measure" .
+                " where sperme_congelation_id = :id" .
                 " order by measure_date desc limit 1";
-            $last = $this->lireParamAsPrepared($sql, array("id"=>$parentValue));
+            $last = $this->lireParamAsPrepared($sql, array("id" => $parentValue));
             if (strlen($last["mt"]) > 0) {
-               $time = new DateTime ($last["mt"]);
-               date_add($time, new DateInterval("PT1M"));
-               $data["measure_date"]= $this->formatDateDBversLocal(date_format($time,"Y-m-d H:i:s"),3);
+                $time = new DateTime($last["mt"]);
+                date_add($time, new DateInterval("PT1M"));
+                $data["measure_date"] = $this->formatDateDBversLocal(date_format($time, "Y-m-d H:i:s"), 3);
             }
         }
         return $data;
     }
 }
-
-?>
